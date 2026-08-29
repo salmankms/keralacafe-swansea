@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reserve a Table — Kerala Cafe</title>
+  <meta name="description" content="Reserve a table at Kerala Cafe, Swansea. Authentic South Indian cuisine at 153-155 Crwys Rd, SA2 0NP. Book online instantly.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- HEADER / NAV -->
+  <header class="site-header is-stuck" id="site-header">
+    <nav class="navbar">
+      <div class="container navbar__inner">
+
+        <a href="index.html" class="navbar__logo">
+          <img src="images/logo.png" alt="Kerala Cafe" class="logo-img"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+          <span class="logo-text" style="display:none;">Kerala<span> Cafe</span></span>
+        </a>
+
+        <button class="navbar__toggle" aria-label="Toggle navigation" aria-expanded="false" id="nav-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <ul class="navbar__links" id="nav-links">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="about.html" class="nav-link">About Us</a></li>
+          <li><a href="reservations.html" class="nav-link nav-link--active">Reserve a Table</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+
+      </div>
+    </nav>
+  </header>
+
+  <!-- INNER PAGE BANNER -->
+  <section class="inner-banner"
+           style="background-image: url('images/header_image.png');">
+    <div class="container inner-banner__content">
+      <h1 class="inner-banner__title">Reserve a Table</h1>
+      <p class="inner-banner__breadcrumb">
+        <a href="index.html">Home</a> &nbsp;/&nbsp; Reserve a Table
+      </p>
+    </div>
+  </section>
+
+  <!-- BOOKING FORM SECTION -->
+  <section class="booking-section">
+    <div class="container">
+
+      <div class="section-header">
+        <span class="section-label">Book Online</span>
+        <h2 class="section-title">Make a Reservation</h2>
+        <div class="section-divider" style="margin: 1rem auto;"></div>
+        <p>Reserve your table in seconds. We are open Mon, Thu–Sun from 3:00pm · Wed from 11:00am · Closed Tuesdays.</p>
+      </div>
+
+      <!-- SUCCESS STATE -->
+      <div class="booking-success" id="booking-success" style="display:none;">
+        <div class="booking-success__icon">✓</div>
+        <h3>Reservation Confirmed!</h3>
+        <p id="booking-success-msg">Your table has been booked. We look forward to seeing you.</p>
+        <a href="index.html" class="btn btn--primary" style="margin-top:1.5rem;">Back to Home</a>
+      </div>
+
+      <!-- ERROR STATE -->
+      <div class="booking-error" id="booking-error" style="display:none;">
+        <p id="booking-error-msg">Something went wrong. Please try again or call us on <a href="tel:+441792951188">+44 1792 951188</a>.</p>
+      </div>
+
+      <!-- FORM -->
+      <form class="booking-form" id="booking-form" novalidate>
+
+        <div class="booking-form__row">
+          <div class="form-group">
+            <label for="full-name">Full Name <span class="required">*</span></label>
+            <input type="text" id="full-name" name="fullName" placeholder="e.g. Sarah Jones" required autocomplete="name">
+            <span class="field-error" id="error-fullName"></span>
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address <span class="required">*</span></label>
+            <input type="email" id="email" name="email" placeholder="you@example.com" required autocomplete="email">
+            <span class="field-error" id="error-email"></span>
+          </div>
+        </div>
+
+        <div class="booking-form__row">
+          <div class="form-group">
+            <label for="phone">Phone Number <span class="required">*</span></label>
+            <input type="tel" id="phone" name="phone" placeholder="+44 7700 000000" required autocomplete="tel">
+            <span class="field-error" id="error-phone"></span>
+          </div>
+          <div class="form-group">
+            <label for="party-size">Party Size <span class="required">*</span></label>
+            <input type="number" id="party-size" name="partySize" placeholder="e.g. 4" min="1" required>
+            <span class="field-error" id="error-partySize"></span>
+          </div>
+        </div>
+
+        <div class="booking-form__row">
+          <div class="form-group">
+            <label for="date">Date <span class="required">*</span></label>
+            <input type="date" id="date" name="date" required>
+            <span class="field-error" id="error-date"></span>
+          </div>
+          <div class="form-group">
+            <label for="time">Time <span class="required">*</span></label>
+            <select id="time" name="time" required>
+              <option value="" disabled selected>Select time</option>
+              <option value="12:00">12:00 pm</option>
+              <option value="12:30">12:30 pm</option>
+              <option value="13:00">1:00 pm</option>
+              <option value="13:30">1:30 pm</option>
+              <option value="14:00">2:00 pm</option>
+              <option value="14:30">2:30 pm</option>
+              <option value="15:00">3:00 pm</option>
+              <option value="15:30">3:30 pm</option>
+              <option value="16:00">4:00 pm</option>
+              <option value="16:30">4:30 pm</option>
+              <option value="17:00">5:00 pm</option>
+              <option value="17:30">5:30 pm</option>
+              <option value="18:00">6:00 pm</option>
+              <option value="18:30">6:30 pm</option>
+              <option value="19:00">7:00 pm</option>
+              <option value="19:30">7:30 pm</option>
+              <option value="20:00">8:00 pm</option>
+              <option value="20:30">8:30 pm</option>
+              <option value="21:00">9:00 pm</option>
+              <option value="21:30">9:30 pm</option>
+              <option value="22:00">10:00 pm</option>
+              <option value="22:30">10:30 pm</option>
+            </select>
+            <span class="field-error" id="error-time"></span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="notes">Special Requests <span class="optional">(optional)</span></label>
+          <textarea id="notes" name="notes" rows="4" placeholder="Allergies, dietary requirements, occasion, seating preferences…"></textarea>
+        </div>
+
+        <div class="booking-form__footer">
+          <button type="submit" class="btn btn--primary btn--large" id="submit-btn">
+            <span class="btn-text">Confirm Reservation</span>
+            <span class="btn-spinner" style="display:none;">Booking…</span>
+          </button>
+          <p class="booking-form__note">We will send a confirmation to your email. For same-day bookings please call <a href="tel:+441792951188">+44 1792 951188</a>.</p>
+        </div>
+
+      </form>
+
+    </div>
+  </section>
+
+  <!-- INFO STRIP -->
+  <section class="booking-info-strip">
+    <div class="container booking-info-strip__inner">
+      <div class="booking-info-item">
+        <strong>Address</strong>
+        <span>1st Floor, 37 Uplands Cres, Swansea SA2 0NP</span>
+      </div>
+      <div class="booking-info-item">
+        <strong>Phone</strong>
+        <a href="tel:+441792951188">+44 1792 951188</a>
+      </div>
+      <div class="booking-info-item">
+        <strong>Hours</strong>
+        <span>Mon, Thu–Sun: 3–10:30pm · Wed: 11am–9pm · Tue: Closed</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+
+    <div class="footer-top">
+      <div class="container">
+        <p class="footer-top__tagline">The best food in Swansea!</p>
+      </div>
+    </div>
+
+    <div class="footer-cards">
+      <div class="container footer-cards__inner">
+
+        <div class="footer-card">
+          <div class="footer-card__icon">📞</div>
+          <h4>Call Us</h4>
+          <a href="tel:+441792951188">+44 1792 951188</a>
+        </div>
+
+        <div class="footer-card">
+          <div class="footer-card__icon">📍</div>
+          <h4>Find Us</h4>
+          <p>1st Floor, 37 Uplands Cres<br>Uplands, Swansea SA2 0NP<br>United Kingdom</p>
+        </div>
+
+        <div class="footer-card">
+          <div class="footer-card__icon">🕐</div>
+          <h4>Opening Hours</h4>
+          <p>Mon, Thu–Sun: 3–10:30pm<br>Wed: 11am–9pm · Tue: Closed</p>
+        </div>
+
+        <div class="footer-card">
+          <div class="footer-card__icon">🌐</div>
+          <h4>Follow Us</h4>
+          <a href="#" aria-label="Kerala Cafe on Facebook">Facebook</a>
+          <a href="#" aria-label="Kerala Cafe on Instagram">Instagram</a>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2026 Kerala Cafe. All rights reserved.</p>
+      </div>
+    </div>
+
+  </footer>
+
+  <script>
+    // Sticky nav
+    const header = document.getElementById('site-header');
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('is-stuck', window.scrollY > 80);
+    });
+
+    // Mobile hamburger
+    const toggle = document.getElementById('nav-toggle');
+    const links  = document.getElementById('nav-links');
+    toggle.addEventListener('click', () => {
+      const expanded = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', String(!expanded));
+      links.classList.toggle('is-open');
+    });
+
+    // Set min date to today
+    const dateInput = document.getElementById('date');
+    const today = new Date().toISOString().split('T')[0];
+    dateInput.setAttribute('min', today);
+
+    // Form submission
+    const form = document.getElementById('booking-form');
+    const submitBtn = document.getElementById('submit-btn');
+    const btnText = submitBtn.querySelector('.btn-text');
+    const btnSpinner = submitBtn.querySelector('.btn-spinner');
+    const successEl = document.getElementById('booking-success');
+    const errorEl = document.getElementById('booking-error');
+    const errorMsg = document.getElementById('booking-error-msg');
+    const successMsg = document.getElementById('booking-success-msg');
+
+    function clearErrors() {
+      document.querySelectorAll('.field-error').forEach(el => el.textContent = '');
+      document.querySelectorAll('.form-group input, .form-group select, .form-group textarea').forEach(el => el.classList.remove('is-invalid'));
+    }
+
+    function showFieldError(name, msg) {
+      const el = document.getElementById('error-' + name);
+      const input = form.querySelector('[name="' + name + '"]');
+      if (el) el.textContent = msg;
+      if (input) input.classList.add('is-invalid');
+    }
+
+    function validate(data) {
+      let valid = true;
+      if (!data.fullName.trim()) { showFieldError('fullName', 'Please enter your name.'); valid = false; }
+      if (!data.email.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) { showFieldError('email', 'Please enter a valid email.'); valid = false; }
+      if (!data.phone.trim()) { showFieldError('phone', 'Please enter your phone number.'); valid = false; }
+      if (!data.partySize || parseInt(data.partySize, 10) < 1) { showFieldError('partySize', 'Please enter the number of guests.'); valid = false; }
+      if (!data.date) { showFieldError('date', 'Please select a date.'); valid = false; }
+      if (!data.time) { showFieldError('time', 'Please select a time.'); valid = false; }
+      return valid;
+    }
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      clearErrors();
+      errorEl.style.display = 'none';
+
+      const data = {
+        fullName:  form.fullName.value,
+        email:     form.email.value,
+        phone:     form.phone.value,
+        partySize: form.partySize.value,
+        date:      form.date.value,
+        time:      form.time.value,
+        notes:     form.notes.value,
+      };
+
+      if (!validate(data)) return;
+
+      // Loading state
+      btnText.style.display = 'none';
+      btnSpinner.style.display = 'inline';
+      submitBtn.disabled = true;
+
+      try {
+        const res = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            access_key: 'c731d229-77ee-4307-a051-84021c7e8f00',
+            subject:    `New Table Reservation — ${data.fullName} (${data.partySize} guests, ${data.date} at ${data.time})`,
+            from_name:  'Kerala Cafe Reservations',
+            name:       data.fullName,
+            email:      data.email,
+            phone:      data.phone,
+            'Party Size': data.partySize,
+            date:       data.date,
+            time:       data.time,
+            'Special Requests': data.notes || 'None',
+          }),
+        });
+
+        const result = await res.json();
+
+        if (result.success) {
+          form.style.display = 'none';
+          successMsg.textContent = `Thank you, ${data.fullName}! Your table for ${data.partySize} on ${data.date} at ${data.time} is confirmed. We look forward to seeing you.`;
+          successEl.style.display = 'block';
+        } else {
+          throw new Error(result.message || 'Submission failed');
+        }
+      } catch (err) {
+        errorMsg.innerHTML = `Something went wrong. Please try again or call us on <a href="tel:+441792951188">+44 1792 951188</a>.`;
+        errorEl.style.display = 'block';
+        btnText.style.display = 'inline';
+        btnSpinner.style.display = 'none';
+        submitBtn.disabled = false;
+      }
+    });
+  </script>
+
+</body>
+</html>
